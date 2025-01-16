@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTrucks } from "../../redux/operations";
-//import css from "./Catalog.module.css";
+import css from "./CatalogPart.module.css";
 import CatalogItem from "../CatalogItem/CatalogItem";
 
-const Catalog = () => {
+const CatalogPart = () => {
   const dispatch = useDispatch();
   const truckItems = useSelector((state) => state.trucklist.items);
   useEffect(() => {
@@ -16,10 +16,10 @@ const Catalog = () => {
       {Array.isArray(truckItems) && truckItems.length === 0 ? (
         <p>no trucks</p>
       ) : (
-        <ul>
+        <ul className={css.itemsList}>
           {Array.isArray(truckItems) &&
             truckItems.map((truck) => (
-              <li key={truck.id}>
+              <li className={css.truckItem} key={truck.id}>
                 <CatalogItem
                   name={truck.name}
                   price={truck.price}
@@ -34,4 +34,4 @@ const Catalog = () => {
   );
 };
 
-export default Catalog;
+export default CatalogPart;

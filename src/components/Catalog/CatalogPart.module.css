@@ -1,0 +1,21 @@
+.lishka {
+  color: black;
+}
+
+.allCatalog {
+  display: flex;
+  flex-direction: row;
+  justify-items: baseline;
+  width: 100%;
+}
+.truckItem {
+  border: 1px solid blue;
+  width: 100%;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  width: 888px;
+  gap: 20px;
+}
