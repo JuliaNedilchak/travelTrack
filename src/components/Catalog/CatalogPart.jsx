@@ -24,7 +24,16 @@ const CatalogPart = () => {
                   name={truck.name}
                   price={truck.price}
                   rating={truck.rating}
+                  description={truck.description}
                   location={truck.location}
+                  photo={truck.gallery[0].thumb}
+                  reviews={
+                    truck.reviews.reduce(
+                      (sum, review) => sum + review.reviewer_rating,
+                      0
+                    ) / truck.reviews.length
+                  }
+                  reviewsAmount={truck.reviews.length}
                 />
               </li>
             ))}

@@ -1,0 +1,34 @@
+.photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+.descFrame {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.truckName {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+}
+.partOfDesc {
+  display: flex;
+
+  gap: 10px;
+}
+.reviews {
+  display: flex;
+}
+.location {
+  display: flex;
+}
+.price {
+  display: flex;
+}
