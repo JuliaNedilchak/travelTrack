@@ -11,20 +11,25 @@ const CatalogPart = () => {
     dispatch(fetchTrucks());
   }, [dispatch]);
 
+  const truncatedText = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return <span>{text.slice(0, maxLength - 3) + "..."}</span>;
+    }
+  };
   return (
     <div>
       {Array.isArray(truckItems) && truckItems.length === 0 ? (
         <p>no trucks</p>
       ) : (
-        <ul className={css.itemsList}>
+        <ul className={css.itemsList1}>
           {Array.isArray(truckItems) &&
             truckItems.map((truck) => (
-              <li className={css.truckItem} key={truck.id}>
+              <li className={css.itemsList} key={truck.id}>
                 <CatalogItem
                   name={truck.name}
                   price={truck.price}
                   rating={truck.rating}
-                  description={truck.description}
+                  description={truncatedText(truck.description, 70)}
                   location={truck.location}
                   photo={truck.gallery[0].thumb}
                   reviews={
@@ -34,6 +39,13 @@ const CatalogPart = () => {
                     ) / truck.reviews.length
                   }
                   reviewsAmount={truck.reviews.length}
+                  transmission={truck.transmission}
+                  engine={truck.engine}
+                  AC={truck.AC ? <p>ac</p> : null}
+                  kitchen={truck.kitchen ? <p>kitchen</p> : null}
+                  form={truck.form}
+                  TV={truck.TV ? <p>TV</p> : null}
+                  bathroom={truck.bathroom ? <p>bathroom</p> : null}
                 />
               </li>
             ))}

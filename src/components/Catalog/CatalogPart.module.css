@@ -9,13 +9,18 @@
   width: 100%;
 }
 .truckItem {
-  border: 1px solid grey light;
   width: 100%;
 }
 
 .itemsList {
   display: flex;
   flex-direction: column;
-  width: 888px;
-  gap: 20px;
+
+  border: 1px solid #dadde1;
+  padding: 24px;
+}
+.itemsList1 {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }

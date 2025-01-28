@@ -3,12 +3,18 @@ import css from "./CatalogItem.module.css";
 const CatalogItem = ({
   name,
   price,
-  rating,
+  transmission,
   location,
   reviewsAmount,
   photo,
   reviews,
   description,
+  engine,
+  AC,
+  kitchen,
+  form,
+  TV,
+  bathroom,
 }) => {
   const formattedPrice = new Intl.NumberFormat("de-DE", {
     style: "currency",
@@ -32,8 +38,15 @@ const CatalogItem = ({
           <p className={css.location}>{location}</p>
         </div>
         <p>{description}</p>
-
-        <p>{rating}</p>
+        <div className={css.detailsList}>
+          <p className={css.detailItem}>{transmission}</p>
+          <p className={css.detailItem}>{form}</p>
+          <p className={css.detailItem}>{engine}</p>
+          <p className={css.detailItem}>{AC}</p>
+          <p className={css.detailItem}>{kitchen}</p>
+          <p className={css.detailItem}>{TV}</p>
+          <p className={css.detailItem}>{bathroom}</p>
+        </div>
       </div>
     </div>
   );
