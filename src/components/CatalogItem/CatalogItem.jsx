@@ -1,4 +1,7 @@
 import css from "./CatalogItem.module.css";
+import { TbAutomaticGearbox } from "react-icons/tb";
+import { MdLocalGasStation } from "react-icons/md";
+import { BsCupHot } from "react-icons/bs";
 
 const CatalogItem = ({
   name,
@@ -38,15 +41,28 @@ const CatalogItem = ({
           <p className={css.location}>{location}</p>
         </div>
         <p>{description}</p>
-        <div className={css.detailsList}>
-          <p className={css.detailItem}>{transmission}</p>
-          <p className={css.detailItem}>{form}</p>
-          <p className={css.detailItem}>{engine}</p>
-          <p className={css.detailItem}>{AC}</p>
-          <p className={css.detailItem}>{kitchen}</p>
-          <p className={css.detailItem}>{TV}</p>
-          <p className={css.detailItem}>{bathroom}</p>
-        </div>
+        <ul className={css.detailsList}>
+          <li className={css.detailItem}>
+            <TbAutomaticGearbox />
+            {transmission}
+          </li>
+          <li className={css.detailItem}>{form}</li>
+          <li className={css.detailItem}>
+            {" "}
+            <MdLocalGasStation />
+            {engine}
+          </li>
+          <li className={css.detailItem}>{AC}</li>
+          {kitchen && (
+            <li className={css.detailItem}>
+              <BsCupHot />
+              kitchen
+            </li>
+          )}
+
+          {TV && <li className={css.detailItem}>TV</li>}
+          {bathroom && <li className={css.detailItem}>bathroom</li>}
+        </ul>
       </div>
     </div>
   );

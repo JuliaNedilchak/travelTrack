@@ -1,11 +1,14 @@
 import React from "react";
 import css from "./Filter.module.css";
+import { CiMap } from "react-icons/ci";
+import { AiOutlineAppstore } from "react-icons/ai";
 
 const Filter = () => {
   return (
     <div className={css.filterBox}>
       <form>
         <label>
+          <CiMap />
           location
           <input type="text" name="location"></input>
         </label>
@@ -37,6 +40,7 @@ const Filter = () => {
           <input type="checkbox" name="vehicleType" value="Van"></input>
         </label>
         <label>
+          <AiOutlineAppstore />
           Fully integrated
           <input
             type="checkbox"

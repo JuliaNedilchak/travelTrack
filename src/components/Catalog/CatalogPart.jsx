@@ -41,11 +41,11 @@ const CatalogPart = () => {
                   reviewsAmount={truck.reviews.length}
                   transmission={truck.transmission}
                   engine={truck.engine}
-                  AC={truck.AC ? <p>ac</p> : null}
-                  kitchen={truck.kitchen ? <p>kitchen</p> : null}
+                  AC={truck.AC ? "AC" : null}
+                  kitchen={truck.kitchen ? "kitchen" : null}
                   form={truck.form}
-                  TV={truck.TV ? <p>TV</p> : null}
-                  bathroom={truck.bathroom ? <p>bathroom</p> : null}
+                  TV={truck.TV ? "TV" : null}
+                  bathroom={truck.bathroom ? "bathroom" : null}
                 />
               </li>
             ))}
