@@ -4,3 +4,10 @@ export const truckSuccess = (trucks) => {
     payload: trucks,
   };
 };
+
+export const filterTrucks = (filters) => {
+  return {
+    type: "trucks/filters",
+    payload: filters,
+  };
+};

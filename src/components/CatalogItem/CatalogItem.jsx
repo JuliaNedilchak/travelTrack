@@ -63,6 +63,9 @@ const CatalogItem = ({
           {TV && <li className={css.detailItem}>TV</li>}
           {bathroom && <li className={css.detailItem}>bathroom</li>}
         </ul>
+        <button className={css.button} type="button">
+          Show more
+        </button>
       </div>
     </div>
   );

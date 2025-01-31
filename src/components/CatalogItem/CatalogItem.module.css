@@ -13,7 +13,6 @@
 .truckName {
   display: flex;
   justify-content: baseline;
-  align-items: ;
 }
 .name {
   font-size: 24px;
@@ -60,4 +59,17 @@
   padding: 12px 18px;
   border-radius: 20px;
   background-color: #f2f4f7;
+}
+.button {
+  display: flex;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 100px;
+  margin-top: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 45px;
+  border: none;
 }
