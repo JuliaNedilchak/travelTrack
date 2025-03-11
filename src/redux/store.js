@@ -1,12 +1,19 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { truckReducer } from "./trucklist/truckReducer";
-import { truckFilterReducer } from "./trucklist/truckFilterReducer";
+import { configureStore } from "@reduxjs/toolkit";
+import { truckReducer } from "./trucklist/truckSlice";
+//import { truckReducer } from "./trucklist/truckSlice";
 
-const rootReducer = combineReducers({
-  trucklist: truckReducer,
-  filters: truckFilterReducer,
-});
+//const rootReducer = combineReducers({
+//trucklist: truckReducer,
+//filters: truckFilterReducer,
+//});
 
+//export const store = createStore(rootReducer);
+
+//export const store = configureStore({
+//reducer: { truckList: truckReducer },
+//});
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    truckList: truckReducer,
+  },
 });

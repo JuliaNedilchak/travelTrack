@@ -1,16 +1,16 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTrucks } from "../../redux/operations";
+
 import css from "./CatalogPart.module.css";
 import CatalogItem from "../CatalogItem/CatalogItem";
+import { useEffect } from "react";
+import { apiRequestTruckList } from "../../redux/trucklist/truckSlice";
 
 const CatalogPart = () => {
   const dispatch = useDispatch();
-  const truckItems = useSelector((state) => state.trucklist.items);
+  const truckItems = useSelector((state) => state.truckList.items);
   useEffect(() => {
-    dispatch(fetchTrucks());
+    dispatch(apiRequestTruckList());
   }, [dispatch]);
-
   const truncatedText = (text, maxLength) => {
     if (text.length > maxLength) {
       return <span>{text.slice(0, maxLength - 3) + "..."}</span>;
