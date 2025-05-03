@@ -8,6 +8,16 @@ import { apiRequestTruckList } from "../../redux/trucklist/truckSlice";
 const CatalogPart = () => {
   const dispatch = useDispatch();
   const truckItems = useSelector((state) => state.truckList.items);
+  /*console.log(
+    "TRUCK FORMS:",
+    truckItems.map((truck) => truck.form)
+  );*/
+
+  const filteredLocation = useSelector(
+    (state) => state.truckList.filters.location
+  );
+  const filters = useSelector((state) => state.truckList.filters);
+  console.log("Current filters:", filters);
   useEffect(() => {
     dispatch(apiRequestTruckList());
   }, [dispatch]);
@@ -16,14 +26,29 @@ const CatalogPart = () => {
       return <span>{text.slice(0, maxLength - 3) + "..."}</span>;
     }
   };
+  const filteredItems = truckItems.filter((truck) => {
+    const matchesLocation = truck.location
+      .toLowerCase()
+      .includes(filteredLocation.toLowerCase());
+
+    const matchesBodyType = !filters.form || truck.form === filters.form;
+    const matchesEquipment =
+      (!filters.equipment.AC || truck.AC) &&
+      (!filters.equipment.automatic || truck.transmission === "Automatic") &&
+      (!filters.equipment.kitchen || truck.kitchen) &&
+      (!filters.equipment.TV || truck.TV) &&
+      (!filters.equipment.bathroom || truck.bathroom);
+
+    return matchesLocation && matchesBodyType && matchesEquipment;
+  });
   return (
     <div>
-      {Array.isArray(truckItems) && truckItems.length === 0 ? (
+      {Array.isArray(filteredItems) && filteredItems.length === 0 ? (
         <p>no trucks</p>
       ) : (
         <ul className={css.itemsList1}>
-          {Array.isArray(truckItems) &&
-            truckItems.map((truck) => (
+          {Array.isArray(filteredItems) &&
+            filteredItems.map((truck) => (
               <li className={css.itemsList} key={truck.id}>
                 <CatalogItem
                   name={truck.name}
