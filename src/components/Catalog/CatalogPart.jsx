@@ -34,10 +34,10 @@ const CatalogPart = () => {
     const matchesBodyType = !filters.form || truck.form === filters.form;
     const matchesEquipment =
       (!filters.equipment.AC || truck.AC) &&
-      (!filters.equipment.automatic || truck.transmission === "Automatic") &&
-      (!filters.equipment.kitchen || truck.kitchen) &&
+      (!filters.equipment.Automatic || truck.transmission === "automatic") &&
+      (!filters.equipment.Kitchen || truck.kitchen) &&
       (!filters.equipment.TV || truck.TV) &&
-      (!filters.equipment.bathroom || truck.bathroom);
+      (!filters.equipment.Bathroom || truck.bathroom);
 
     return matchesLocation && matchesBodyType && matchesEquipment;
   });
@@ -51,6 +51,7 @@ const CatalogPart = () => {
             filteredItems.map((truck) => (
               <li className={css.itemsList} key={truck.id}>
                 <CatalogItem
+                  id={truck.id}
                   name={truck.name}
                   price={truck.price}
                   rating={truck.rating}

@@ -2,6 +2,7 @@ import css from "./CatalogItem.module.css";
 import { TbAutomaticGearbox } from "react-icons/tb";
 import { MdLocalGasStation } from "react-icons/md";
 import { BsCupHot } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const CatalogItem = ({
   name,
@@ -17,6 +18,7 @@ const CatalogItem = ({
   kitchen,
   form,
   TV,
+  id,
   bathroom,
 }) => {
   const formattedPrice = new Intl.NumberFormat("de-DE", {
@@ -63,9 +65,11 @@ const CatalogItem = ({
           {TV && <li className={css.detailItem}>TV</li>}
           {bathroom && <li className={css.detailItem}>bathroom</li>}
         </ul>
-        <button className={css.button} type="button">
-          Show more
-        </button>
+        <Link to={`/catalog/${id}`}>
+          <button className={css.button} type="button">
+            Show more
+          </button>
+        </Link>
       </div>
     </div>
   );

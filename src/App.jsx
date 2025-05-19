@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 //import CatalogPart from "./components/Catalog/CatalogPart";
 import Catalog from "./pages/Catalog/Catalog";
+import DetailsPage from "./pages/Details/DetailsPage";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
+        <Route path="/catalog/:truckId" element={<DetailsPage />} />
       </Routes>
     </div>
   );
