@@ -11,7 +11,7 @@ const CatalogItem = ({
   location,
   reviewsAmount,
   photo,
-  reviews,
+  rating,
   description,
   engine,
   AC,
@@ -38,7 +38,7 @@ const CatalogItem = ({
 
         <div className={css.partOfDesc}>
           <p className={css.reviews}>
-            {reviews} ({reviewsAmount} reviews)
+            {rating} ({reviewsAmount} reviews)
           </p>
           <p className={css.location}>{location}</p>
         </div>

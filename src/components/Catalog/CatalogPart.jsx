@@ -58,12 +58,6 @@ const CatalogPart = () => {
                   description={truncatedText(truck.description, 70)}
                   location={truck.location}
                   photo={truck.gallery[0].thumb}
-                  reviews={
-                    truck.reviews.reduce(
-                      (sum, review) => sum + review.reviewer_rating,
-                      0
-                    ) / truck.reviews.length
-                  }
                   reviewsAmount={truck.reviews.length}
                   transmission={truck.transmission}
                   engine={truck.engine}

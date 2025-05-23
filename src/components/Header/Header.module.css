@@ -1,5 +1,4 @@
-.container {
-  height: 696px;
-  width: 100%;
-  background-image: url("../../images/Picture_hero.jpg");
+.header {
+  display: flex;
+  padding: 24px 64px;
 }
