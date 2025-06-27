@@ -1,0 +1,36 @@
+.formWrapper {
+  width: 527px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 18px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.comment {
+  width: 100%;
+  padding-top: 18px;
+  padding-bottom: 76px;
+  padding-left: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.formButton {
+  padding: 16px 60px;
+  border-radius: 200px;
+  gap: 10px;
+  background-color: #e44848;
+}
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

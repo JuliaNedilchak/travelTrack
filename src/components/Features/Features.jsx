@@ -30,28 +30,28 @@ const Features = () => {
         <p>Vehicle details</p>
         <ul className={css.vehicleDetails}>
           <li className={css.itemDetail}>
-            <p>Form</p>
-            {truck.form}
+            <p className={css.itemName}>Form</p>
+            <p className={css.itemValue}>{truck.form}</p>
           </li>
           <li className={css.itemDetail}>
-            <p>Length</p>
-            {truck.length}
+            <p className={css.itemName}>Length</p>
+            <p className={css.itemValue}> {truck.length}</p>
           </li>
-          <li>
-            <p>Width</p>
-            {truck.width}
+          <li className={css.itemDetail}>
+            <p className={css.itemName}>Width</p>
+            <p className={css.itemValue}> {truck.width}</p>
           </li>
-          <li>
-            <p>Height</p>
-            {truck.height}
+          <li className={css.itemDetail}>
+            <p className={css.itemName}>Height</p>
+            <p className={css.itemValue}> {truck.height}</p>
           </li>
-          <li>
-            <p>Tank</p>
-            {truck.tank}
+          <li className={css.itemDetail}>
+            <p className={css.itemName}>Tank</p>
+            <p className={css.itemValue}> {truck.tank}</p>
           </li>
-          <li>
-            <p>Consumption</p>
-            {truck.consumption}
+          <li className={css.itemDetail}>
+            <p className={css.itemName}>Consumption</p>
+            <p className={css.itemValue}>{truck.consumption}</p>
           </li>
         </ul>
       </div>

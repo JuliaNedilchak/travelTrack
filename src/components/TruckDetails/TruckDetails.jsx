@@ -27,8 +27,7 @@ const TruckDetails = () => {
         <p>{formattedPrice} </p>
         <ul className={css.photoList}>
           {truck.gallery.map((truckItem) => (
-            <li className={css.photo} key={truckItem.id}>
-              {" "}
+            <li key={truckItem.id} className={css.photo}>
               <img className={css.picture} src={truckItem.thumb} alt="truck" />
             </li>
           ))}
